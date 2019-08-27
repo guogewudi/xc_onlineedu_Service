@@ -12,7 +12,7 @@
             <charset>utf8</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>warn</level>
+            <level>info</level>
             <onMatch>ACCEPT</onMatch>
             　　　　 <onMismatch>DENY</onMismatch>
         </filter>

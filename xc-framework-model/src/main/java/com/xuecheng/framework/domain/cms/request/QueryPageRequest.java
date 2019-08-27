@@ -15,4 +15,6 @@ public class QueryPageRequest extends RequestData {
     private String pageAliase;
     //模版id
     private String templateId;
+
+    private String dataUrl;
 }

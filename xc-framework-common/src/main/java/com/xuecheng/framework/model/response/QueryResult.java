@@ -4,12 +4,11 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.util.List;
-
 /**
- * @Author: mrt.
- * @Description:
- * @Date:Created in 2018/1/24 18:33.
- * @Modified By:
+ * Copyright@http://github.com/guogewudi
+ * Author:国宇航
+ * Date:2019/8/22
+ * Description:
  */
 @Data
 @ToString

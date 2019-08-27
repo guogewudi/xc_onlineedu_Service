@@ -7,6 +7,7 @@ import com.xuecheng.framework.domain.cms.response.CmsPageResult;
 import com.xuecheng.framework.model.response.CommonCode;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.QueryResult;
+import com.xuecheng.framework.model.response.ResponseResult;
 import com.xuecheng.manage_cms.service.PageService;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
@@ -27,7 +28,7 @@ public class CmsPageController implements CmsPageControllerApi {
 @Autowired
     private PageService pageService;
     @Override
-    @GetMapping("list/{page}/{size}")
+    @GetMapping("/list/{page}/{size}")
     @ApiOperation("查询")
     public QueryResponseResult findList(
             @ApiParam(name = "page",value = "页面")
@@ -60,5 +61,31 @@ public class CmsPageController implements CmsPageControllerApi {
                                  @ApiParam(name = "cmsPage",value = "页面信息")
                                          CmsPage cmsPage) {
         return pageService.add(cmsPage);
+    }
+
+    @Override
+    @GetMapping("/get/{id}")
+    public CmsPage findById(@PathVariable  String id) {
+        return pageService.findById(id);
+    }
+
+    @Override
+    @PutMapping("/edit/{id}")
+    public CmsPageResult edit(@PathVariable String id,
+                              @RequestBody  CmsPage cmsPage) {
+        return pageService.update(id,cmsPage);
+    }
+
+    @Override
+    @DeleteMapping("/del/{id}")
+    public ResponseResult delete(@PathVariable String id) {
+        ResponseResult delete = pageService.delete(id);
+        return delete;
+    }
+
+    @Override
+    @PostMapping("/postPage/{pageId}")
+    public ResponseResult post(@PathVariable("pageId") String pageId){
+        return pageService.postPage(pageId);
     }
 }

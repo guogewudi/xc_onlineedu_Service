@@ -4,7 +4,10 @@ import lombok.Data;
 import lombok.ToString;
 
 /**
- * Created by mrt on 2018/3/5.
+ * Copyright@http://github.com/guogewudi
+ * Author:国宇航
+ * Date:2019/8/22
+ * Description:
  */
 @Data
 @ToString
